@@ -7,6 +7,12 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const { Pool } = require('pg')
+
+const pool = new Pool({
+    connectionString: process.env.process.env.QOVERY_DATABASE_MY_DB_CONNECTION_URI,
+})
+
 var app = express();
 
 
